@@ -608,15 +608,18 @@ License: For each use you must have a valid license purchased only from above li
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
-                                <div class="menu-item px-5">
-                                    <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign
-                                        Out</a>
-                                </div>
                                 <!--end::Menu item-->
+                            </div>
+                            <div class="menu-item px-5">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-flex flex-center btn-primary align-self-center px-0 px-md-3 h-30px w-30px w-md-auto h-lg-40px ms-2 ms-lg-4">Sign Out</button>
+                                </form>
                             </div>
                             <!--end::User account menu-->
                             <!--end::Menu wrapper-->
                         </div>
+
                         <!--end::User menu-->
                         <!--begin::Invite-->
                         <div class="d-flex align-items-center ms-2 ms-lg-4">

@@ -55,6 +55,8 @@ License: For each use you must have a valid license purchased only from above li
 <!--end::Global Javascript Bundle-->
 <!--begin::Custom Javascript(used for this page only)-->
 <script src="{{ asset('/js/custom/auth/sign-up/general.js') }}"></script>
+<script src="{{ asset('/js/custom/authentication/sign-in/general.js') }} "></script>
+
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 </body>

@@ -78,14 +78,24 @@
                                 <!--end::Separator-->
                                 <!--begin::Input group=-->
                                 <div class="fv-row mb-8">
-                                    <!--begin::Email-->
-                                    <input type="text" placeholder="Name" name="name" autocomplete="off" class="form-control bg-transparent" />
-                                    <!--end::Email-->
+                                    <!--begin::Name-->
+                                    <input type="text" placeholder="Name" name="name" autocomplete="off" class="form-control bg-transparent @error('name') is-invalid @enderror" autofocus />
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                    <!--end::Name-->
                                 </div>
                                 <!--begin::Input group=-->
                                 <div class="fv-row mb-8">
                                     <!--begin::Email-->
-                                    <input type="email" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
+                                    <input type="email" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent @error('email') is-invalid @enderror" />
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                     <!--end::Email-->
                                 </div>
                                 <!--begin::Input group-->
@@ -94,11 +104,16 @@
                                     <div class="mb-1">
                                         <!--begin::Input wrapper-->
                                         <div class="position-relative mb-3">
-                                            <input class="form-control bg-transparent" type="password" placeholder="Password" name="password" autocomplete="off" />
+                                            <input class="form-control bg-transparent @error('password') is-invalid @enderror" type="password" placeholder="Password" name="password" autocomplete="off" />
                                             <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 													<i class="ki-duotone ki-eye-slash fs-2"></i>
 													<i class="ki-duotone ki-eye fs-2 d-none"></i>
 												</span>
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
                                         </div>
                                         <!--end::Input wrapper-->
                                         <!--begin::Meter-->
@@ -147,7 +162,7 @@
                                 <!--end::Submit button-->
                                 <!--begin::Sign up-->
                                 <div class="text-gray-500 text-center fw-semibold fs-6">Already have an Account?
-                                    <a href="authentication/layouts/overlay/sign-in.html" class="link-primary fw-semibold">Sign in</a></div>
+                                    <a href="{{ route('login') }}" class="link-primary fw-semibold">Sign in</a></div>
                                 <!--end::Sign up-->
                             </form>
                             <!--end::Form-->

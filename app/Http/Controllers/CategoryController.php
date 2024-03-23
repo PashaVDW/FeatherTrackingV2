@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -29,7 +30,13 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        Category::create();
+        Category::create([
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'user_id' => Auth::user()->id,
+        ]);
+
+        return redirect('/');
     }
 
     /**

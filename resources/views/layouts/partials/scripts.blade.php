@@ -28,3 +28,5 @@
 <script src="{{ asset('/js/custom/utilities/modals/create-project/complete.js') }}"></script>
 <script src="{{ asset('/js/custom/utilities/modals/create-project/main.js') }}"></script>
 <script src="{{ asset('/js/custom/utilities/modals/users-search.js') }}"></script>
+<script src="{{ asset('/js/categoryIcons.js') }}"></script>
+
